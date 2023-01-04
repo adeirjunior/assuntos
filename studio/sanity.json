@@ -1,5 +1,9 @@
 {
   "root": true,
+  "api": {
+    "projectId": "skqv6dht",
+    "dataset": "development"
+  },
   "project": {
     "name": "Blog"
   },
@@ -13,7 +17,9 @@
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"]
+      "plugins": [
+        "@sanity/vision"
+      ]
     }
   },
   "parts": [
