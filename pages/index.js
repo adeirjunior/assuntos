@@ -18,7 +18,7 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
     <>
       <Layout preview={preview}>
         <Head>
-          
+          <title>Assuntos.dev</title>
         </Head>
         <Container>
           <Intro />
