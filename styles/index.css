@@ -9,6 +9,12 @@
     --black: #1E1E1E;
 }
 
+body {
+    background-color: var(--white);
+}
+* {
+    color: var(--black);
+}
 *::selection {
     background-color: var(--black);
     color: var(--white);
