@@ -3,3 +3,13 @@
 @tailwind components;
 /* purgecss end ignore */
 @tailwind utilities;
+
+:root {
+    --white: #F1F1F1;
+    --black: #1E1E1E;
+}
+
+*::selection {
+    background-color: var(--black);
+    color: var(--white);
+}
