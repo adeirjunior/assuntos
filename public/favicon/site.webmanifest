@@ -1,6 +1,6 @@
 {
-  "name": "Next.js",
-  "short_name": "Next.js",
+  "name": "Assuntos.dev",
+  "short_name": "Assuntos",
   "icons": [
     {
       "src": "/favicons/android-chrome-192x192.png",
@@ -13,7 +13,8 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#000000",
-  "background_color": "#000000",
+  "start_url": "/",
+  "theme_color": "#1E1E1E",
+  "background_color": "#1E1E1E",
   "display": "standalone"
 }
