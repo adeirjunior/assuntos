@@ -30,3 +30,6 @@ code::selection {
     background-color: var(--white);
     color: var(--black);;
 } 
+time {
+    text-transform: capitalize;
+}
