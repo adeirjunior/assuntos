@@ -5,5 +5,5 @@ export default function Date({ dateString }) {
   if (!dateString) return null
 
   const date = parseISO(dateString)
-  return <time dateTime={dateString}>{format(date, 'd LLLL, yyyy', { locale: ptBR })}</time>
+  return <time dateTime={dateString}>{format(date, "d 'de' LLLL, yyyy", { locale: ptBR })}</time>
 }
