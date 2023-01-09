@@ -32,6 +32,3 @@ code::selection {
     color: var(--black);;
 }
 
-a {
-    text-decoration: dashed;
-}
