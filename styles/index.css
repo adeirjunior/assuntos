@@ -26,7 +26,12 @@ code {
     padding: .4em 0;
     white-space: pre-wrap;
 }
+
 code::selection {
     background-color: var(--white);
     color: var(--black);;
+}
+
+a {
+    text-decoration: dashed;
 }

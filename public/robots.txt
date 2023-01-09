@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.assuntos.dev
+
+# Sitemaps
+Sitemap: https://www.assuntos.dev/sitemap.xml
