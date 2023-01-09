@@ -43,6 +43,7 @@ export default function Post({ data = {}, preview }) {
                 <title>
                   {post.title} | Assuntos.dev
                 </title>
+                <meta name="description" content={post.excerpt} />
                 {post.coverImage?.asset?._ref && (
                   <meta
                     key="ogImage"
