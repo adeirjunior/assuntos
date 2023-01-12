@@ -1,34 +1,14 @@
-/* purgecss start ignore */
 @tailwind base;
 @tailwind components;
-/* purgecss end ignore */
 @tailwind utilities;
 
-:root {
-    --white: #F1F1F1;
-    --black: #1E1E1E;
+body, code::selection {
+    @apply bg-light text-dark;
 }
-
-body {
-    background-color: var(--white);
+*::selection, code {
+    @apply bg-dark text-light;
 }
-* {
-    color: var(--black);
-}
-*::selection {
-    background-color: var(--black);
-    color: var(--white);
-}
-
 code {
-    background-color: var(--black);
-    color: var(--white);
     padding: .4em 0;
     white-space: pre-wrap;
 }
-
-code::selection {
-    background-color: var(--white);
-    color: var(--black);;
-}
-

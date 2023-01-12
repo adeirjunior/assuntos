@@ -7,6 +7,7 @@ import Layout from '../components/layout'
 import { indexQuery } from '../lib/queries'
 import { usePreviewSubscription } from '../lib/sanity'
 import { getClient, overlayDrafts } from '../lib/sanity.server'
+import { useEffect } from 'react'
 
 export default function Index({ allPosts: initialAllPosts, preview }) {
   const { data: allPosts } = usePreviewSubscription(indexQuery, {
@@ -14,6 +15,9 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
     enabled: preview,
   })
   const [heroPost, ...morePosts] = allPosts || []
+
+  
+  useEffect(() => console.log(heroPost),[])
   return (
     <>
       <Layout preview={preview}>
@@ -21,9 +25,8 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
           <title>Assuntos.dev</title>
           <meta name="description" content="Assuntos.dev é uma blog feito para o compartilhamento de conhecimentos acerca da programação" />
         </Head>
-        <Container>
-          <Intro />
-          {heroPost && (
+        <Intro />
+        {heroPost && (
             <HeroPost
               title={heroPost.title}
               coverImage={heroPost.coverImage}
@@ -31,8 +34,10 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
               author={heroPost.author}
               slug={heroPost.slug}
               excerpt={heroPost.excerpt}
+              category={heroPost.categories}
             />
           )}
+        <Container>
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
       </Layout>

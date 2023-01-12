@@ -23,7 +23,7 @@ export default {
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [{ type: 'block' }, {type: 'code'}],
     },
     {
       name: 'excerpt',
@@ -48,6 +48,12 @@ export default {
       title: 'Author',
       type: 'reference',
       to: [{ type: 'author' }],
+    },
+    {
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'category'}}],
     },
   ],
   preview: {
