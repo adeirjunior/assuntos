@@ -1,5 +1,5 @@
 import { HTML, Logo, Search, Sun } from "./assets"
-export default function Intro({post}) {
+export default function Intro() {
   return (
     <section className="flex-col flex items-center">
       <Logo tailwind="w-60 mt-8 mb-6"/>

@@ -5,7 +5,7 @@ export default {
   fields: [
     {
       name: 'title',
-      title: 'Title',
+      title: 'Título',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
@@ -21,18 +21,18 @@ export default {
     },
     {
       name: 'content',
-      title: 'Content',
+      title: 'Conteúdo',
       type: 'array',
       of: [{ type: 'block' }, {type: 'code'}],
     },
     {
       name: 'excerpt',
-      title: 'Excerpt',
+      title: 'Resumo',
       type: 'string',
     },
     {
       name: 'coverImage',
-      title: 'Cover Image',
+      title: 'Capa',
       type: 'image',
       options: {
         hotspot: true,
@@ -40,27 +40,27 @@ export default {
     },
     {
       name: 'date',
-      title: 'Date',
+      title: 'Data',
       type: 'datetime',
     },
     {
       name: 'author',
-      title: 'Author',
+      title: 'Autor',
       type: 'reference',
       to: [{ type: 'author' }],
     },
     {
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
+      name: 'categorie',
+      title: 'Categoria',
+      type: 'reference',
+      to: {type: 'category'},
     },
   ],
   preview: {
     select: {
       title: 'title',
       author: 'author.name',
-      media: 'coverImage',
+      media: 'categorie.picture',
     },
     prepare(selection) {
       const { author } = selection

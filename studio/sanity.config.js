@@ -12,7 +12,7 @@ export default defineConfig(
     name: 'default',
     title: 'assuntos',
     icon: LaunchIcon,
-    projectId: '0zsnvmb9',
+    projectId: 'skqv6dht',
     dataset: process.env.NODE_ENV === 'development' ? 'development' : 'production',
     plugins: [
       deskTool(),

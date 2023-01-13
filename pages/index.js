@@ -17,7 +17,7 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
   const [heroPost, ...morePosts] = allPosts || []
 
   
-  useEffect(() => console.log(heroPost),[])
+  useEffect(() => console.log(heroPost.categorie),[])
   return (
     <>
       <Layout preview={preview}>
@@ -34,7 +34,7 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
               author={heroPost.author}
               slug={heroPost.slug}
               excerpt={heroPost.excerpt}
-              category={heroPost.categories}
+              category={heroPost.category}
             />
           )}
         <Container>
