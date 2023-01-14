@@ -23,7 +23,7 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
       <Layout preview={preview}>
         <Head>
           <title>Assuntos.dev</title>
-          <meta name="description" content="Assuntos.dev é uma blog feito para o compartilhamento de conhecimentos acerca da programação" />
+          <meta name="description" content="Assuntos.dev é um blog feito para o compartilhamento de conhecimentos acerca da programação" />
         </Head>
         <Intro />
         {heroPost && (

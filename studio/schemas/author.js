@@ -1,17 +1,17 @@
 export default {
   name: 'author',
-  title: 'Author',
+  title: 'Autor',
   type: 'document',
   fields: [
     {
       name: 'name',
-      title: 'Name',
+      title: 'Nome',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
     {
       name: 'picture',
-      title: 'Picture',
+      title: 'Foto',
       type: 'image',
       options: { hotspot: true },
       validation: (Rule) => Rule.required(),
