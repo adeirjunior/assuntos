@@ -22,8 +22,10 @@ export default function HeroPost({
             <div className="bg-light w-full h-28 rounded-2xl grid place-content-center">
               <HTML tailwind="group-hover:scale-110 ease-in transition"/>
             </div>
+            <div>
             <h2 className="text-2xl font-extrabold my-8">{title}</h2>
             <p>{excerpt}</p>
+            </div>
             <Date tailwind="my-6" dateString={date} />
             {author && <Avatar name={author.name} picture={author.picture} />}
           </div>
