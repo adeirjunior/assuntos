@@ -14,6 +14,7 @@ module.exports = {
         success: '#0070f3',
         cyan: '#79FFE1',
         dark: '#171717',
+        darker: '#101010',
         light: '#F6F6F6'
       },
       spacing: {
