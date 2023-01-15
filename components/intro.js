@@ -15,7 +15,7 @@ export default function Intro() {
         <Search className="fill-white"/>
         
         <span className="cursor-pointer" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-          {theme === 'dark' ? (<Sun className="fill-white"/>) : (<Moon className="fill-white"/>)}
+          {theme === 'dark' ? (<Sun className="fill-white"/>) : theme === 'light' ? (<Moon className="fill-white"/>) : ''}
         </span>
       </div>
       </nav>
