@@ -50,17 +50,17 @@ export default {
       to: [{ type: 'author' }],
     },
     {
-      name: 'categorie',
+      name: 'category',
       title: 'Categoria',
       type: 'reference',
-      to: {type: 'category'},
+      to: [{type: 'category'}],
     },
   ],
   preview: {
     select: {
       title: 'title',
       author: 'author.name',
-      media: 'categorie.picture',
+      media: 'category.picture',
     },
     prepare(selection) {
       const { author } = selection

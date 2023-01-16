@@ -33,6 +33,7 @@ export default function Post({ data = {}, preview }) {
   return (
     <Layout preview={preview}>
       <Container>
+        <div className="dark:text-light">
         <Header />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
@@ -68,6 +69,7 @@ export default function Post({ data = {}, preview }) {
             {morePosts.length > 0 && <MoreStories posts={morePosts} />}
           </>
         )}
+        </div>
       </Container>
     </Layout>
   )

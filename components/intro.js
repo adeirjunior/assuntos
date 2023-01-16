@@ -1,5 +1,6 @@
-import { HTML, Logo, Search, Sun, Moon } from "./assets"
-import {useTheme} from 'next-themes'
+import { Logo, Moon, Search, Sun } from "./assets"
+import { useTheme } from "next-themes"
+
 
 export default function Intro() {
   const {theme, setTheme} = useTheme()
@@ -12,10 +13,11 @@ export default function Intro() {
           <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z"></path>
       </svg>
       <div className="flex justify-between pt-4 pb-8 px-6">
-        <Search className="fill-white"/>
-        
+        <span>
+          <Search className="fill-light"/>
+        </span>
         <span className="cursor-pointer" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-          {theme === 'dark' ? (<Sun className="fill-white"/>) : theme === 'light' ? (<Moon className="fill-white"/>) : ''}
+          {theme === 'dark' ? <Sun className="fill-light"/> : <Moon className="fill-light"/>}
         </span>
       </div>
       </nav>

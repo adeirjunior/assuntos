@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Logo({tailwind}) {
+function Logo({className}) {
   return (
-    <svg className={tailwind} width="67" height="67" viewBox="0 0 67 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className={className} width="67" height="67" viewBox="0 0 67 67" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M14.0863 61.6187L9.76648 13.1671H57.2336L52.9092 61.6111L33.471 67L14.0863 61.6187Z" fill="#E34F26"/>
       <path d="M33.5 62.8809L49.2071 58.5263L52.9025 17.1287H33.5V62.8809Z" fill="#EF652A"/>
       <path d="M33.5001 35.0987H25.6367L25.0937 29.0136H33.5001V23.0712H33.4795H18.5994L18.7416 24.6654L20.2021 41.041H33.5001V35.0987Z" fill="#EBEBEB"/>

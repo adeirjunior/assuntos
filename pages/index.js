@@ -7,7 +7,6 @@ import Layout from '../components/layout'
 import { indexQuery } from '../lib/queries'
 import { usePreviewSubscription } from '../lib/sanity'
 import { getClient, overlayDrafts } from '../lib/sanity.server'
-import { useEffect } from 'react'
 
 export default function Index({ allPosts: initialAllPosts, preview }) {
   const { data: allPosts } = usePreviewSubscription(indexQuery, {
@@ -15,9 +14,6 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
     enabled: preview,
   })
   const [heroPost, ...morePosts] = allPosts || []
-
-  
-  useEffect(() => console.log(heroPost.categorie),[])
   return (
     <>
       <Layout preview={preview}>

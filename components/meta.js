@@ -1,8 +1,9 @@
 import Head from 'next/head'
+import Script from 'next/script'
 import { CMS_NAME, HOME_OG_IMAGE_URL } from '../lib/constants'
 
 export default function Meta() {
-  return (
+  return <>
     <Head>
       <link
         rel="apple-touch-icon"
@@ -42,7 +43,9 @@ export default function Meta() {
       <meta name="theme-color" content="#1E1E1E" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} key="ogImage" />
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8012556702871059" crossorigin="anonymous"></script>
     </Head>
-  )
+    <Script>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8012556702871059" crossorigin="anonymous"></script>
+    </Script>
+  </>
 }
