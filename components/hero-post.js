@@ -28,22 +28,20 @@ export default function HeroPost({
     <div style={{ paddingTop: '50%', backgroundColor: '#ddd' }} />
   )
 
-
   return (
     <section className="mb-16">
       <div className="bg-dark w-full pt-4 pb-12 flex flex-col items-center text-light selection:bg-light selection:text-dark">
         <Link href={`posts/${slug}`}>
-          <div className="px-10 max-w-xs group ">
+          <div className="px-10 max-w-xs sm:max-w-md md:grid group ">
             <div className="bg-light dark:bg-darker w-full h-28 rounded-2xl grid place-content-center">
-            {image}
+              {image}
             </div>
             <div>
-            <h2 className="text-2xl font-extrabold my-8">{title}</h2>
-            <p>{excerpt}</p>
-            <p>{category.title}</p>
+              <h2 className="text-2xl font-extrabold my-8">{title}</h2>
+              <p>{excerpt}</p>
+              <Date className="my-6" dateString={date} />
+              {author && <Avatar name={author.name} picture={author.picture} />}
             </div>
-            <Date className="my-6" dateString={date} />
-            {author && <Avatar name={author.name} picture={author.picture} />}
           </div>
         </Link>
       </div>

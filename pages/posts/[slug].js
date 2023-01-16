@@ -9,10 +9,10 @@ import PostHeader from '../../components/post-header'
 import SectionSeparator from '../../components/section-separator'
 import Layout from '../../components/layout'
 import PostTitle from '../../components/post-title'
-import { CMS_NAME } from '../../lib/constants'
 import { postQuery, postSlugsQuery } from '../../lib/queries'
 import { urlForImage, usePreviewSubscription } from '../../lib/sanity'
 import { sanityClient, getClient, overlayDrafts } from '../../lib/sanity.server'
+import { useEffect } from 'react'
 
 export default function Post({ data = {}, preview }) {
   const router = useRouter()
@@ -29,6 +29,8 @@ export default function Post({ data = {}, preview }) {
   if (!router.isFallback && !slug) {
     return <ErrorPage statusCode={404} />
   }
+
+  useEffect(() => console.log(post.content), [])
 
   return (
     <Layout preview={preview}>
@@ -62,6 +64,7 @@ export default function Post({ data = {}, preview }) {
                 coverImage={post.coverImage}
                 date={post.date}
                 author={post.author}
+                category={post.category}
               />
               <PostBody content={post.content} />
             </article>

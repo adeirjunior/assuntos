@@ -7,7 +7,7 @@ export default function MoreStories({ posts }) {
       <h2 className="mb-20 dark:text-light text-center text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
         Outros Posts
       </h2>
-      <div className="grid grid-cols-1 place-content-center md:grid-cols-2 md:gap-x-10 lg:grid-cols-3 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
+      <div className="grid grid-cols-1 place-content-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-28 mb-32">
         {posts.map((post) => (
           <PostCard
             key={post.slug}
