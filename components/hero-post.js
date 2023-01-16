@@ -1,6 +1,5 @@
 import Avatar from '../components/avatar'
 import Date from '../components/date'
-import cn from 'classnames'
 import Link from 'next/link'
 import { urlForImage } from '../lib/sanity'
 import Image from 'next/image'
@@ -23,6 +22,7 @@ export default function HeroPost({
         alt={`Cover Image for ${title}`}
         src={urlForImage(category?.picture?.asset?._ref).url()}
         sizes="100vw"
+        priority
       />
   ) : (
     <div style={{ paddingTop: '50%', backgroundColor: '#ddd' }} />

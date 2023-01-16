@@ -29,6 +29,7 @@ export default {
       name: 'excerpt',
       title: 'Resumo',
       type: 'string',
+      validation: (Rule) => Rule.max(204)
     },
     {
       name: 'coverImage',
