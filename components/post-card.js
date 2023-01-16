@@ -28,7 +28,7 @@ function PostCard({
     }
   return (
     <div className="w-60 relative bg-light dark:bg-dark group m-auto transition-all h-80 border-4 rounded-3xl overflow-hidden border-dark dark:border-dark">
-        <Link href={`posts/${slug}`}>
+        <Link href={`/posts/${slug}`}>
             <div className="text-dark dark:text-light cursor-pointer">
                 <div className="grid place-content-center group-hover:scale-105 py-6">
                     {image}
