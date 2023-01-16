@@ -13,7 +13,6 @@ export default function HeroPost({
   slug,
   category
 }) {
-  console.log(urlForImage(category.picture?.asset?._ref).height(1000).width(2000).url())
   return (
     <section className="mb-16">
       <div className="bg-dark w-full pt-4 pb-12 flex flex-col items-center text-light selection:bg-light selection:text-dark">
@@ -25,7 +24,7 @@ export default function HeroPost({
               width={2000}
               height={1000}
               alt={`Imagem de capa para ${title}`}
-              src={urlForImage(category.picture?.asset?._ref).url()}
+              src={urlForImage(category?.picture?.asset?._ref).url()}
               sizes="100vw"
             />
             </div>
