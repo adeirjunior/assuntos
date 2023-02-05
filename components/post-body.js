@@ -7,14 +7,15 @@ const code = {
     code: ({value}) => {
       const turnArray = () => [value?.code]
       return (
-        <div>
+        <code className='select-none'>
           <CopyBlock
             text={value?.code}
             language={value?.language}
             theme={dracula}
-            wrapLines
+            wrapLines={true}
+            codeBlock
           />
-        </div>  
+        </code>  
       )
     }
   },

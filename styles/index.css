@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body, code::selection {
+body {
     @apply bg-light text-dark;
 }
 *::selection {
