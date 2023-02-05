@@ -23,7 +23,13 @@ export default {
       name: 'content',
       title: 'Conteúdo',
       type: 'array',
-      of: [{ type: 'block' }, {type: 'code'}],
+      of: [
+        { type: 'block' }, 
+        {
+          type: 'code', 
+          options: { language: 'html' }
+        }
+      ],
     },
     {
       name: 'excerpt',
