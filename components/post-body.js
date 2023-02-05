@@ -12,7 +12,6 @@ const code = {
             text={value?.code}
             language={value?.language}
             theme={dracula}
-            showLineNumbers
             wrapLines
           />
         </div>  
