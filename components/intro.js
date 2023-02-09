@@ -13,9 +13,13 @@ export default function Intro() {
           <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z"></path>
       </svg>
       <div className="flex justify-between pt-4 pb-8 px-6">
-        <span>
-          <Search className="fill-light"/>
-        </span>
+        <div className="flex">
+          <span>
+            <Search className="fill-light cursor-pointer"/>
+          </span>
+          <input className="dark:text-light ml-2 px-2 bg-light dark:bg-dark focus:outline-none" placeholder="Search..." type="text" />
+        </div>
+        
         <span className="cursor-pointer" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
           {theme === 'dark' ? <Sun className="fill-light"/> : <Moon className="fill-light"/>}
         </span>
