@@ -29,7 +29,7 @@ export default function Search({data}) {
           {resultados.map(({slug, name}, index) => (
           <Link href={`posts/${slug}`}>
             <div className='p-4 hover:bg-slate-400'>
-              <li key={index} className='text-light'>{name}</li>
+              {focused && <li key={index} className='text-light'>{name}</li>}
             </div>
           </Link>
           ))}
