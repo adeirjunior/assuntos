@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 import { indexQuery } from '../lib/queries'
 import { usePreviewSubscription } from '../lib/sanity'
 import { getClient, overlayDrafts } from '../lib/sanity.server'
-import PostCard from '../components/post-card'
+import { SearchDTO } from '../lib/searchDto'
 
 export default function Index({ allPosts: initialAllPosts, preview }) {
   const { data: allPosts } = usePreviewSubscription(indexQuery, {
@@ -22,7 +22,7 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
           <title>Assuntos.dev</title>
           <meta name="description" content="Assuntos.dev é um blog feito para o compartilhamento de conhecimentos acerca da programação" />
         </Head>
-        <Intro />
+        <Intro data={SearchDTO(allPosts)}/>
         {heroPost && (
             <HeroPost
               title={heroPost.title}

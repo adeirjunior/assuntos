@@ -1,8 +1,8 @@
-import { Logo, Moon, Search, Sun } from "./assets"
+import { Logo, Moon, Sun, Search as SearchIcon } from "./assets"
 import { useTheme } from "next-themes"
+import Search from "./search"
 
-
-export default function Intro() {
+export default function Intro({data}) {
   const {theme, setTheme} = useTheme()
 
   return (
@@ -14,10 +14,7 @@ export default function Intro() {
       </svg>
       <div className="flex justify-between pt-4 pb-8 px-6">
         <div className="flex">
-          <span>
-            <Search className="fill-light cursor-pointer"/>
-          </span>
-          <input className="dark:text-light ml-2 px-2 bg-light dark:bg-dark focus:outline-none" placeholder="Search..." type="text" />
+          <Search data={data}/>
         </div>
         
         <span className="cursor-pointer" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
