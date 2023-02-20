@@ -17,7 +17,7 @@ export default function Search({data}) {
     <div>
       <input
         type="text"
-        className='w-80 outline-none rounded-md px-4 py-1 text-dark dark:text-white'
+        className='w-44 sm:w-80 outline-none rounded-md px-4 py-1 text-dark dark:text-white'
         value={termoPesquisa}
         onChange={(event) => setTermoPesquisa(event.target.value)}
         placeholder="Pesquisar"
