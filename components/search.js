@@ -25,7 +25,7 @@ export default function Search({data}) {
         onBlur={() => onBlur()}
       />
       <div className='relative mt-4'>
-        <ul className={`max-h-56 overflow-y-scroll scrollbar scrollbar-thumb-gray-900 scrollbar-track-gray-100 scrollbar-thin absolute transition-opacity rounded-md ${focused ? 'bg-slate-600' : 'opacity-0 bg-none'} top-0 left-0 overflow-hidden`}>
+        <ul className={`max-h-56 overflow-y-scroll scrollbar-thumb-gray-900 scrollbar-track-gray-100 scrollbar-thin absolute transition-opacity rounded-md ${focused ? 'bg-slate-600' : 'opacity-0 bg-none'} top-0 left-0 overflow-hidden`}>
           {resultados.map(({slug, name}, index) => (
           <Link href={`posts/${slug}`}>
             <div className='p-4 hover:bg-slate-400'>
