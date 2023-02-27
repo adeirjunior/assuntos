@@ -9,17 +9,18 @@ import PostHeader from '../../components/post-header'
 import SectionSeparator from '../../components/section-separator'
 import Layout from '../../components/layout'
 import PostTitle from '../../components/post-title'
-import { postQuery, postSlugsQuery } from '../../lib/queries'
+import { indexQuery, postQuery, postSlugsQuery } from '../../lib/queries'
 import { urlForImage, usePreviewSubscription } from '../../lib/sanity'
 import { sanityClient, getClient, overlayDrafts } from '../../lib/sanity.server'
 import { useEffect } from 'react'
+import { SearchDTO } from '../../lib/searchDto'
 
 export default function Post({ data = {}, preview }) {
   const router = useRouter()
 
   const slug = data?.post?.slug
   const {
-    data: { post, morePosts },
+    data: { post, morePosts, allPosts },
   } = usePreviewSubscription(postQuery, {
     params: { slug },
     initialData: data,
@@ -36,7 +37,7 @@ export default function Post({ data = {}, preview }) {
     <Layout preview={preview}>
       <Container>
         <div className="dark:text-light">
-        <Header />
+        <Header data={SearchDTO(allPosts)}/>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
@@ -79,15 +80,19 @@ export default function Post({ data = {}, preview }) {
 }
 
 export async function getStaticProps({ params, preview = false }) {
+  
   const { post, morePosts } = await getClient(preview).fetch(postQuery, {
     slug: params.slug,
   })
+
+  const allPosts = overlayDrafts(await getClient(preview).fetch(indexQuery))
 
   return {
     props: {
       preview,
       data: {
         post,
+        allPosts,
         morePosts: overlayDrafts(morePosts),
       },
     },

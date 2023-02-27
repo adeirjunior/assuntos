@@ -1,8 +1,9 @@
 import Link from 'next/link'
-import { Moon, Search, Sun } from './assets'
+import { Moon, Sun } from './assets'
 import { useTheme } from 'next-themes'
+import Search from './search'
 
-export default function Header() {
+export default function Header({data}) {
   const {theme, setTheme} = useTheme()
 
   return (
@@ -14,10 +15,9 @@ export default function Header() {
       </h2>
       <div className='flex '>
         <div className="flex mr-6">
-        <input className="dark:text-light mr-4 px-2 bg-light dark:bg-darker focus:outline-none" placeholder="Search..." type="text" />
-          <span>
-            <Search className="fill-dark dark:fill-light cursor-pointer"/>
-          </span>
+        
+            <Search data={data}/>
+          
           
         </div>
         
