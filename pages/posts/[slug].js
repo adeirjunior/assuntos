@@ -12,26 +12,29 @@ import PostTitle from '../../components/post-title'
 import { indexQuery, postQuery, postSlugsQuery } from '../../lib/queries'
 import { urlForImage, usePreviewSubscription } from '../../lib/sanity'
 import { sanityClient, getClient, overlayDrafts } from '../../lib/sanity.server'
-import { useEffect } from 'react'
 import { SearchDTO } from '../../lib/searchDto'
 
 export default function Post({ data = {}, preview }) {
   const router = useRouter()
 
   const slug = data?.post?.slug
+
+  if (!router.isFallback && !slug) {
+    return <ErrorPage statusCode={404} />
+  }
+
   const {
-    data: { post, morePosts, allPosts },
+    data: { post, morePosts, allPosts : initialAllPosts },
   } = usePreviewSubscription(postQuery, {
     params: { slug },
     initialData: data,
     enabled: preview && slug,
   })
 
-  if (!router.isFallback && !slug) {
-    return <ErrorPage statusCode={404} />
-  }
-
-  useEffect(() => console.log(post.content), [])
+  const { data: allPosts } = usePreviewSubscription(indexQuery, {
+    initialData: initialAllPosts,
+    enabled: preview,
+  })
 
   return (
     <Layout preview={preview}>
