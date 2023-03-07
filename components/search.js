@@ -9,8 +9,11 @@ export default function Search({data}) {
   const [termoPesquisa, setTermoPesquisa] = useState("");
   const [resultados, setResultados] = useState([]);
   const [focused, setFocused] = useState(false)
+  const [mouseOver, setMouseOver] = useState(false)
   const onFocus = () => setFocused(true)
-  const onBlur = () => setFocused(false)
+  const onBlur = () => setFocused(mouseOver)
+  const onMouseEnter = () => setMouseOver(true)
+  const onMouseLeave = () => setMouseOver(false)
 
   useEffect(() => search(data, termoPesquisa, setResultados), [termoPesquisa])
 
@@ -26,11 +29,15 @@ export default function Search({data}) {
         onBlur={() => onBlur()}
       />
       <div className='relative mt-4'>
-        <ul className={`overflow-y-scroll scrollbar-thumb-gray-900 scrollbar-track-gray-100 scrollbar-thin absolute transition-opacity rounded-md ${focused ? 'bg-slate-600' : 'opacity-0 bg-none'} top-0 left-0 overflow-hidden`}>
+        <ul 
+          onMouseEnter={() => onMouseEnter()} 
+          onMouseLeave={() => onMouseLeave()} 
+          className={`overflow-y-scroll scrollbar-thumb-gray-900 scrollbar-track-gray-100 scrollbar-thin absolute transition-opacity rounded-md ${focused ? 'bg-slate-600' : 'opacity-0 bg-none'} top-0 left-0 overflow-hidden`}
+        >
           {focused && (
             <>
-              {resultados.slice(0, 5).map(({slug, name}, index) => (
-              <Link key={index} href={`posts/${slug}`} >
+              {resultados.slice(0, 6).map(({slug, name}, index) => (
+              <Link key={index} href={`/posts/${slug}`} >
                 <div className='p-4 hover:bg-slate-400 '>
                   <li className='text-light'>{name}</li>
                 </div>
