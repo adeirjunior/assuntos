@@ -38,7 +38,7 @@ export default function Search({data}) {
             <>
               {resultados.slice(0, 6).map(({slug, name}, index) => (
               <Link key={index} href={`/posts/${slug}`} >
-                <div className='p-4 hover:bg-slate-400 '>
+                <div onClick={() => setFocused(false)} className='p-4 hover:bg-slate-400 '>
                   <li className='text-light'>{name}</li>
                 </div>
               </Link>
