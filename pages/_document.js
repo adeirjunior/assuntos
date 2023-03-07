@@ -7,6 +7,8 @@ export default function Document() {
       <body className="dark:bg-darker">
         <Main />
         <NextScript />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8012556702871059"
+        crossorigin="anonymous"></script>
       </body>
     </Html>
   )
