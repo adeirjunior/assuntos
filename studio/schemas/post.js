@@ -7,7 +7,7 @@ export default {
       name: 'title',
       title: 'Título',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().max(34),
     },
     {
       name: 'slug',
@@ -28,6 +28,9 @@ export default {
         {
           type: 'code', 
           options: { language: 'html' }
+        },
+        {
+          type: 'image'
         }
       ],
     },
