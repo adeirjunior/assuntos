@@ -14,6 +14,7 @@ You'll get:
 ### [https://next-blog-sanity.vercel.app](https://next-blog-sanity.vercel.app)
 
 ## Related example
+
 # Configuration
 
 - [A statically generated blog example using Next.js and Sanity](#a-statically-generated-blog-example-using-nextjs-and-sanity)

@@ -24,21 +24,21 @@ export default {
       title: 'Conteúdo',
       type: 'array',
       of: [
-        { type: 'block' }, 
+        { type: 'block' },
         {
-          type: 'code', 
-          options: { language: 'html' }
+          type: 'code',
+          options: { language: 'html' },
         },
         {
-          type: 'image'
-        }
+          type: 'image',
+        },
       ],
     },
     {
       name: 'excerpt',
       title: 'Resumo',
       type: 'string',
-      validation: (Rule) => Rule.max(204)
+      validation: (Rule) => Rule.max(204),
     },
     {
       name: 'coverImage',
@@ -63,7 +63,7 @@ export default {
       name: 'category',
       title: 'Categoria',
       type: 'reference',
-      to: [{type: 'category'}],
+      to: [{ type: 'category' }],
     },
   ],
   preview: {

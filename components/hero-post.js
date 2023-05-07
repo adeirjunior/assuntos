@@ -11,19 +11,18 @@ export default function HeroPost({
   excerpt,
   author,
   slug,
-  category
+  category,
 }) {
-
   const image = category?.picture?.asset?._ref ? (
-      <Image
-        className="w-14 group-hover:scale-110 h-auto transition-all"
-        width={2000}
-        height={1000}
-        alt={`Cover Image for ${title}`}
-        src={urlForImage(category?.picture?.asset?._ref).url()}
-        sizes="100vw"
-        priority
-      />
+    <Image
+      className="w-14 group-hover:scale-110 h-auto transition-all"
+      width={2000}
+      height={1000}
+      alt={`Cover Image for ${title}`}
+      src={urlForImage(category?.picture?.asset?._ref).url()}
+      sizes="100vw"
+      priority
+    />
   ) : (
     <div style={{ paddingTop: '50%', backgroundColor: '#ddd' }} />
   )
@@ -45,8 +44,16 @@ export default function HeroPost({
           </div>
         </Link>
       </div>
-      <svg data-name="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" className="fill-dark"></path>
+      <svg
+        data-name="wave"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z"
+          className="fill-dark"
+        ></path>
       </svg>
     </section>
   )

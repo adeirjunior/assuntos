@@ -3,20 +3,20 @@
 @tailwind utilities;
 
 body {
-    @apply bg-light text-dark;
+  @apply bg-light text-dark;
 }
 *::selection {
-    @apply bg-dark text-light;
+  @apply bg-dark text-light;
 }
 
 .post-text h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 .post-text a {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .post-text a:hover {
-    opacity: .8;
+  opacity: 0.8;
 }

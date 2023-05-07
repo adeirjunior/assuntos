@@ -1,14 +1,14 @@
 import markdownStyles from './markdown-styles.module.css'
 import { PortableText } from '@portabletext/react'
-import { CopyBlock, dracula } from "react-code-blocks"
+import { CopyBlock, dracula } from 'react-code-blocks'
 import Image from 'next/image'
 import { urlForImage } from '../lib/sanity'
 
 const components = {
   types: {
-    code: ({value}) => {
+    code: ({ value }) => {
       return (
-        <code className='select-none'>
+        <code className="select-none">
           <CopyBlock
             text={value?.code}
             language={value?.language}
@@ -16,17 +16,18 @@ const components = {
             wrapLines={true}
             codeBlock
           />
-        </code>  
+        </code>
       )
     },
-    image: ({value}) => {
+    image: ({ value }) => {
       return (
-        <Image 
+        <Image
           src={urlForImage(value?.asset?._ref).url()}
           width={1000}
-          height={700}/>
+          height={700}
+        />
       )
-    }
+    },
   },
 }
 

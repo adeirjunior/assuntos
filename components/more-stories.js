@@ -3,7 +3,7 @@ import PostCard from './post-card'
 
 export default function MoreStories({ posts }) {
   return (
-    <section className='dark:selection:bg-light dark:selection:text-darker'>
+    <section className="dark:selection:bg-light dark:selection:text-darker">
       <h2 className="mb-20 dark:text-light text-center text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
         Outros Posts
       </h2>

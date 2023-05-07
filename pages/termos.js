@@ -31,9 +31,7 @@ function termos() {
       </p>
       <ol>
         <li>
-          <span>
-            modificar ou copiar os materiais;&nbsp;
-          </span>
+          <span>modificar ou copiar os materiais;&nbsp;</span>
         </li>
         <li>
           <span>
@@ -70,9 +68,7 @@ function termos() {
         </span>
       </p>
       <h2>
-        <span>
-          3. Isenção de responsabilidade
-        </span>
+        <span>3. Isenção de responsabilidade</span>
       </h2>
       <ol>
         <li>
@@ -158,7 +154,7 @@ function termos() {
         </span>
       </p>
     </article>
-  );
+  )
 }
 
 export default termos

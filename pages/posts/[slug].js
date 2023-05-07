@@ -24,7 +24,7 @@ export default function Post({ data = {}, preview }) {
   }
 
   const {
-    data: { post, morePosts, allPosts : initialAllPosts },
+    data: { post, morePosts, allPosts: initialAllPosts },
   } = usePreviewSubscription(postQuery, {
     params: { slug },
     initialData: data,
@@ -40,42 +40,40 @@ export default function Post({ data = {}, preview }) {
     <Layout preview={preview}>
       <Container>
         <div className="dark:text-light">
-        <Header data={SearchDTO(allPosts)}/>
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <article>
-              <Head>
-                <title>
-                  {post.title} | Assuntos.dev
-                </title>
-                <meta name="description" content={post.excerpt} />
-                {post.coverImage?.asset?._ref && (
-                  <meta
-                    key="ogImage"
-                    property="og:image"
-                    content={urlForImage(post.coverImage)
-                      .width(1200)
-                      .height(627)
-                      .fit('crop')
-                      .url()}
-                  />
-                )}
-              </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-                category={post.category}
-              />
-              <PostBody content={post.content} />
-            </article>
-            <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-          </>
-        )}
+          <Header data={SearchDTO(allPosts)} />
+          {router.isFallback ? (
+            <PostTitle>Loading…</PostTitle>
+          ) : (
+            <>
+              <article>
+                <Head>
+                  <title>{post.title} | Assuntos.dev</title>
+                  <meta name="description" content={post.excerpt} />
+                  {post.coverImage?.asset?._ref && (
+                    <meta
+                      key="ogImage"
+                      property="og:image"
+                      content={urlForImage(post.coverImage)
+                        .width(1200)
+                        .height(627)
+                        .fit('crop')
+                        .url()}
+                    />
+                  )}
+                </Head>
+                <PostHeader
+                  title={post.title}
+                  coverImage={post.coverImage}
+                  date={post.date}
+                  author={post.author}
+                  category={post.category}
+                />
+                <PostBody content={post.content} />
+              </article>
+              <SectionSeparator />
+              {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+            </>
+          )}
         </div>
       </Container>
     </Layout>
@@ -83,7 +81,6 @@ export default function Post({ data = {}, preview }) {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  
   const { post, morePosts } = await getClient(preview).fetch(postQuery, {
     slug: params.slug,
   })

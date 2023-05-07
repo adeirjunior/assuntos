@@ -20,20 +20,23 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
       <Layout preview={preview}>
         <Head>
           <title>Assuntos.dev</title>
-          <meta name="description" content="Assuntos.dev é um blog feito para o compartilhamento de conhecimentos acerca da programação" />
+          <meta
+            name="description"
+            content="Assuntos.dev é um blog feito para o compartilhamento de conhecimentos acerca da programação"
+          />
         </Head>
-        <Intro data={SearchDTO(allPosts)}/>
+        <Intro data={SearchDTO(allPosts)} />
         {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-              category={heroPost.category}
-            />
-          )}
+          <HeroPost
+            title={heroPost.title}
+            coverImage={heroPost.coverImage}
+            date={heroPost.date}
+            author={heroPost.author}
+            slug={heroPost.slug}
+            excerpt={heroPost.excerpt}
+            category={heroPost.category}
+          />
+        )}
         <Container>
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>

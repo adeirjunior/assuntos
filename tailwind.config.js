@@ -15,7 +15,7 @@ module.exports = {
         cyan: '#79FFE1',
         dark: '#171717',
         darker: '#101010',
-        light: '#F6F6F6'
+        light: '#F6F6F6',
       },
       spacing: {
         28: '7rem',
@@ -38,8 +38,6 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('tailwind-scrollbar'),
-  ],
+  plugins: [require('tailwind-scrollbar')],
   important: true,
 }

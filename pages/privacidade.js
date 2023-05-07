@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/link';
+import Link from 'next/link'
 
 function privacidade() {
   return (
@@ -11,9 +11,9 @@ function privacidade() {
         <span>
           A sua privacidade é importante para nós. É política do Assuntos.dev
           respeitar a sua privacidade em relação a qualquer informação sua que
-          possamos coletar no site{" "}
-          <Link href="https://assuntos.dev">Assuntos.dev</Link>, e outros sites que
-          possuímos e operamos.
+          possamos coletar no site{' '}
+          <Link href="https://assuntos.dev">Assuntos.dev</Link>, e outros sites
+          que possuímos e operamos.
         </span>
       </p>
       <p>
@@ -93,17 +93,13 @@ function privacidade() {
         <li>
           <span>
             B) Não difundir propaganda ou conteúdo de natureza racista,
-            xenofóbica,{" "}
+            xenofóbica,{' '}
           </span>
           <span>
-            <a
-              href="https://apostasonline.guru/betano-apostas/"
-            >
-              betano
-            </a>
+            <a href="https://apostasonline.guru/betano-apostas/">betano</a>
           </span>
           <span>
-            {" "}
+            {' '}
             ou azar, qualquer tipo de pornografia ilegal, de apologia ao
             terrorismo ou contra os direitos humanos;
           </span>
@@ -135,7 +131,7 @@ function privacidade() {
         </span>
       </p>
     </article>
-  );
+  )
 }
 
 export default privacidade

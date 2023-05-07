@@ -6,8 +6,12 @@ export default function Date({ dateString, className }) {
 
   const date = parseISO(dateString)
   return (
-    <div className={`py-2 px-8 bg-light dark:bg-darker rounded-full text-dark dark:text-light w-fit ${className}`}>
-      <time dateTime={dateString}>{format(date, "d 'de' LLLL, yyyy", { locale: ptBR })}</time>
+    <div
+      className={`py-2 px-8 bg-light dark:bg-darker rounded-full text-dark dark:text-light w-fit ${className}`}
+    >
+      <time dateTime={dateString}>
+        {format(date, "d 'de' LLLL, yyyy", { locale: ptBR })}
+      </time>
     </div>
   )
 }
